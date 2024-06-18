@@ -1,0 +1,7 @@
+O projeto será composto por várias classes e métodos para implementar as funcionalidades desejadas. Vamos criar um console application em C# que incluirá as seguintes classes principais:
+
+Doacao: Representa uma doação.
+SistemaDeGerenciamento: Gerencia as doações.
+Programa: Contém o método Main e a lógica para interagir com o usuário.
+Classes e Métodos
+Vamos desenvolver as classes com todas as funcionalidades necessárias, incluindo o tratamento de exceções e a manipulação de arquivos para persistência dos dados.
