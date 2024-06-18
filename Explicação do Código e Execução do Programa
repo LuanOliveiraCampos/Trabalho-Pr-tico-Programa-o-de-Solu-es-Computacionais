@@ -1,0 +1,11 @@
+Explicação do Código:
+Classe Doacao: Representa uma doação com propriedades para tipo, quantidade e data. Inclui um construtor e um método ToString para exibição.
+
+Classe SistemaDeGerenciamento: Gerencia a lista de doações, calculando o total e armazenando os dados em um arquivo texto. Inclui métodos para adicionar doações, calcular o total, armazenar em arquivo e carregar doações do arquivo.
+
+Classe Programa: Contém o método Main e interage com o usuário para adicionar doações, calcular o total e listar as doações. Utiliza um laço while para apresentar um menu de opções.
+
+Execução do Programa:
+Ao iniciar o programa, as doações são carregadas do arquivo doacoes.txt.
+O usuário pode adicionar novas doações, calcular o total de doações e listar todas as doações.
+As doações são armazenadas em um arquivo texto para persistência dos dados entre execuções.
