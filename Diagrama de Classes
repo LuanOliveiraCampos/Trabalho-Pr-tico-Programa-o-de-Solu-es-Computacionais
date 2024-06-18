@@ -1,0 +1,20 @@
+Descrição Textual do Diagrama de Classes:
+
+Exemplo:
+
+Classe Doacao
+
+Propriedades:
+tipo: String
+quantidade: int
+data: LocalDate
+Métodos:
+get/set para cada propriedade
+Classe SistemaDeGerenciamento
+
+Propriedades:
+listaDeDoacoes: List<Doacao>
+Métodos:
+adicionarDoacao(Doacao doacao)
+calcularTotalDoacoes(): double
+armazenarDoacoes(): void
