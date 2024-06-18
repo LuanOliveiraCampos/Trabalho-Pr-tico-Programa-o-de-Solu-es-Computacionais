@@ -1,0 +1,8 @@
+1. Proposta de Problema
+Problema: Desenvolvimento de um sistema de gerenciamento de doações para ajudar as vítimas de uma enchente no Rio Grande do Sul.
+
+Funcionalidades do Sistema:
+
+Receber Doações: Interface para doadores informarem detalhes da doação (tipo, quantidade, data).
+Calcular Total de Doações: Função que soma todas as doações e apresenta o total de maneira clara.
+Armazenar Informações de Doações: Armazenamento das informações em um banco de dados ou arquivo texto para futuras consultas e análises.
