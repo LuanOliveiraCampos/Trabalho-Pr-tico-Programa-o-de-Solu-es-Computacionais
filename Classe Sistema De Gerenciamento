@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+public class SistemaDeGerenciamento
+{
+    private List<Doacao> listaDeDoacoes = new List<Doacao>();
+    private const string arquivo = "doacoes.txt";
+
+    public void AdicionarDoacao(Doacao doacao)
+    {
+        listaDeDoacoes.Add(doacao);
+        ArmazenarDoacoes();
+    }
+
+    public double CalcularTotalDoacoes()
+    {
+        double total = 0;
+        foreach (var doacao in listaDeDoacoes)
+        {
+            total += doacao.Quantidade;
+        }
+        return total;
+    }
+
+    public void ArmazenarDoacoes()
+    {
+        using (StreamWriter writer = new StreamWriter(arquivo))
+        {
+            foreach (var doacao in listaDeDoacoes)
+            {
+                writer.WriteLine($"{doacao.Tipo}|{doacao.Quantidade}|{doacao.Data}");
+            }
+        }
+    }
+
+    public void CarregarDoacoes()
+    {
+        if (File.Exists(arquivo))
+        {
+            using (StreamReader reader = new StreamReader(arquivo))
+            {
+                string linha;
+                while ((linha = reader.ReadLine()) != null)
+                {
+                    var partes = linha.Split('|');
+                    var tipo = partes[0];
+                    var quantidade = int.Parse(partes[1]);
+                    var data = DateTime.Parse(partes[2]);
+                    listaDeDoacoes.Add(new Doacao(tipo, quantidade, data));
+                }
+            }
+        }
+    }
+
+    public void ListarDoacoes()
+    {
+        foreach (var doacao in listaDeDoacoes)
+        {
+            Console.WriteLine(doacao.ToString());
+        }
+    }
+}
