@@ -1,0 +1,13 @@
+Passo 1: Utilizar uma IA generativa para dividir o problema em requisitos funcionais. Submeta o enunciado do problema à IA e solicite que ela identifique e liste as funcionalidades necessárias.
+
+Sugestão de Interação com a IA:
+
+Prompt: "Ajudar a dividir o seguinte problema em requisitos funcionais: Desenvolvimento de um sistema de gerenciamento de doações para ajudar as vítimas de uma enchente no Rio Grande do Sul. O sistema deve receber doações, calcular o total de doações e armazenar as informações."
+Exemplo de Resposta da IA:
+
+Tela para entrada de doações
+Campos para tipo de doação, quantidade e data
+Validação dos dados inseridos
+Armazenamento das doações em banco de dados/arquivo
+Cálculo do total de doações
+Exibição do total de doações em uma interface
