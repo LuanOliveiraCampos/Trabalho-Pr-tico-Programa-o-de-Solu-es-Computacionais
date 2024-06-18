@@ -1,0 +1,66 @@
+using System;
+
+public class Programa
+{
+    public static void Main()
+    {
+        SistemaDeGerenciamento sistema = new SistemaDeGerenciamento();
+        sistema.CarregarDoacoes();
+        
+        bool continuar = true;
+        while (continuar)
+        {
+            Console.WriteLine("Escolha uma opção:");
+            Console.WriteLine("1. Adicionar doação");
+            Console.WriteLine("2. Calcular total de doações");
+            Console.WriteLine("3. Listar doações");
+            Console.WriteLine("4. Sair");
+            string opcao = Console.ReadLine();
+
+            switch (opcao)
+            {
+                case "1":
+                    AdicionarDoacao(sistema);
+                    break;
+                case "2":
+                    Console.WriteLine($"Total de Doações: {sistema.CalcularTotalDoacoes()}");
+                    break;
+                case "3":
+                    sistema.ListarDoacoes();
+                    break;
+                case "4":
+                    continuar = false;
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida. Tente novamente.");
+                    break;
+            }
+        }
+    }
+
+    public static void AdicionarDoacao(SistemaDeGerenciamento sistema)
+    {
+        try
+        {
+            Console.WriteLine("Digite o tipo de doação:");
+            string tipo = Console.ReadLine();
+
+            Console.WriteLine("Digite a quantidade:");
+            int quantidade = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite a data da doação (dd/MM/yyyy):");
+            DateTime data = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+
+            Doacao doacao = new Doacao(tipo, quantidade, data);
+            sistema.AdicionarDoacao(doacao);
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine("Erro no formato dos dados: " + ex.Message);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Erro: " + ex.Message);
+        }
+    }
+}
