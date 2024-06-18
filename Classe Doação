@@ -1,0 +1,20 @@
+using System;
+
+public class Doacao
+{
+    public string Tipo { get; set; }
+    public int Quantidade { get; set; }
+    public DateTime Data { get; set; }
+
+    public Doacao(string tipo, int quantidade, DateTime data)
+    {
+        Tipo = tipo;
+        Quantidade = quantidade;
+        Data = data;
+    }
+
+    public override string ToString()
+    {
+        return $"{Data.ToShortDateString()} - {Tipo}: {Quantidade}";
+    }
+}
